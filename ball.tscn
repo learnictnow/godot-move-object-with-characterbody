@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx8x1v67qvwjk"]
+
+[ext_resource type="Texture2D" uid="uid://7rcldugfiuii" path="res://icon.svg" id="1_0mj8m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8gjov"]
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4uts7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5es2"]
+albedo_texture = ExtResource("1_0mj8m")
+
+[sub_resource type="SphereMesh" id="SphereMesh_l3vxa"]
+
+[node name="Ball" type="RigidBody3D" groups=["Ball"]]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_8gjov")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4uts7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["Ball"]]
+layers = 2
+material_overlay = SubResource("StandardMaterial3D_m5es2")
+mesh = SubResource("SphereMesh_l3vxa")

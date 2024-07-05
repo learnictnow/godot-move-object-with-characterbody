@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn3yisi8qkomv"]
+
+[ext_resource type="Script" path="res://Player1.gd" id="1_bp315"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jo0oy"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ombs"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_exd1j"]
+size = Vector3(1, 2, 1)
+
+[node name="Player1" type="CharacterBody3D"]
+script = ExtResource("1_bp315")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_jo0oy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_8ombs")
+mesh = SubResource("BoxMesh_exd1j")

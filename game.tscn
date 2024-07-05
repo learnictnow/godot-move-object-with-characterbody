@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvhe07dj0fxvr"]
+
+[ext_resource type="PackedScene" uid="uid://0n7j0a24qpvq" path="res://pitch.tscn" id="1_hj2uj"]
+[ext_resource type="PackedScene" uid="uid://bx8x1v67qvwjk" path="res://ball.tscn" id="2_exwuv"]
+[ext_resource type="PackedScene" uid="uid://dn3yisi8qkomv" path="res://player_1.tscn" id="3_sifim"]
+[ext_resource type="PackedScene" uid="uid://d2dy32nuba0iu" path="res://player_2.tscn" id="4_7sns5"]
+
+[node name="Game" type="Node"]
+
+[node name="Pitch" parent="." instance=ExtResource("1_hj2uj")]
+
+[node name="Player1" parent="." instance=ExtResource("3_sifim")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 1, -23)
+
+[node name="Player2" parent="." instance=ExtResource("4_7sns5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 24)
+
+[node name="Ball" parent="." instance=ExtResource("2_exwuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 28)
